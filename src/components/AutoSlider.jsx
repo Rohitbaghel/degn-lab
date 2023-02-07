@@ -1,10 +1,11 @@
 import React from "react";
+import Genesis from "./Genesis";
 import Alien from "./Alien";
 
-const colors = [<Alien/>, <Alien/>, <Alien/>];
+const colors = [<Genesis />, <Alien />, <Genesis />];
 const delay = 2500;
 
- export function Slideshow() {
+export function Slideshow() {
   const [index, setIndex] = React.useState(0);
   const timeoutRef = React.useRef(null);
 
@@ -36,7 +37,9 @@ const delay = 2500;
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
         {colors.map((backgroundColor, index) => (
-          <div className="slide " key={index} >{backgroundColor}</div>
+          <div className="slide " key={index}>
+            {backgroundColor}
+          </div>
         ))}
       </div>
 

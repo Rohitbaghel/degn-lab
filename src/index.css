@@ -184,6 +184,7 @@ code {
   transform: translate3d(0px, 0px, 0px) rotate(0.0001deg);
   transform-style: preserve-3d;
   backface-visibility: hidden;
+  /* border: 1px solid ; */
 }
 
 .layer {
@@ -192,8 +193,8 @@ code {
   backface-visibility: hidden;
   position: absolute;
   display: block;
-  left: 0px;
-  top: 0px;
+  left: -80px;
+  top: 30px;
 }
 .name_container {
   font-size: 152px;
@@ -203,7 +204,7 @@ code {
   position: absolute;
   display: block;
   left: 150px;
-  top: 0px;
+  top: 80px;
   /* z-index: 1; */
 }
 .titles__title {
@@ -216,18 +217,86 @@ code {
 }
 
 .trans {
-  background: linear-gradient(to bottom, white 60%, rgba(255, 255, 255, 0) 50%);
+  background: linear-gradient(to bottom, white 50%, rgba(255, 255, 255, 0) 50%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* font-family: Roboto Mono; */
 }
 .trans2 {
-  transform: translate(0px, -90%);
+  /* transform: translate(0px, -90%); */
+  background: linear-gradient(to bottom, white 60%, rgba(255, 255, 255, 0) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* font-family: Roboto Mono; */
 }
-.trans3 {
-  transform: translate(0px, 45%);
+.trans3:hover {
+  transform: translate3d(8px, -4.7px, 0px);
+   transform-style: preserve-3d;
+
 }
 .trans4 {
   transform: translate(0px, 0%);
 }
+ @keyframes spin3D {
+    from { transform: rotateY(20deg) }
+    to { transform: rotateY(360deg) }
+  }
+  .spinblade3D {
+    animation-name: spin3D;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    /* linear | ease | ease-in | ease-out | ease-in-out */
+    animation-timing-function: ease-in-out;
+  }
+
+   .spinicon3D {
+    animation-name: spin3D;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    /* linear | ease | ease-in | ease-out | ease-in-out */
+    animation-timing-function: ease-in-out;
+  }
+
+  .element {
+  position: absolute;
+  top: -40px;
+  left: 400px;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  animation: appear-div 1.5s forwards 1s infinite;
+
+}
+
+@keyframes appear-div {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  /* left: 50%; */
+  transform: translate(-50%, 100%);
+  opacity: 0;
+  animation: down-div 1s forwards;
+}
+
+@keyframes down-div {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
