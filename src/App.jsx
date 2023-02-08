@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import Human from "./components/Human";
 import Collection from "./components/Collection";
 import Angel from "./components/Angel";
-import AnimatedBox from "./components/ViewBox";
 
 
 
