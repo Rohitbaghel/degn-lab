@@ -1,42 +1,61 @@
 import React from "react";
+import Collection from "./Collection";
 
 const Genesis = () => {
+//   let constrain = 20;
+// let mouseOverContainer = document.getElementById("ex1");
+// let ex1Layer = document.getElementById("ex1-layer");
+
+// function transforms(x, y, el) {
+//   let box = el.getBoundingClientRect();
+//   let calcX = -(y - box.y - (box.height / 2)) / constrain;
+//   let calcY = (x - box.x - (box.width / 2)) / constrain;
+  
+//   return "perspective(100px) "
+//     + "   rotateX("+ calcX +"deg) "
+//     + "   rotateY("+ calcY +"deg) ";
+// };
+
+//  function transformElement(el, xyEl) {
+//   el.style.transform  = transforms.apply(null, xyEl);
+// }
+
+// mouseOverContainer.onmousemove = function(e) {
+//   let xy = [e.clientX, e.clientY];
+//   let position = xy.concat([ex1Layer]);
+
+//   window.requestAnimationFrame(function(){
+//     transformElement(ex1Layer, position);
+//   });
+// };
   return (
-    <div className="alien_back mx-14  my-4  text-white ">
-      <div className="relative uppercase layer name_container trans3">
-        <p className="layer text-white font-bold text-lg whitespace-nowrap">
+    <div className="alien_back mx-32 px-20  my-4  text-white relative uppercase ">
+      <div className="relative py-28">
+        <p className="text-white  text-lg alien_font whitespace-nowrap absolute left-1 top-28 ">
           Mint on 31/08/2022
         </p>
-        <p className="font-bold absolute z-0 trans ">Murakami</p>
-        <p className="font-bold  absolute top-20 z-0 trans2  ">Murakami</p>
-        <p className="font-bold  absolute z-0 top-44 ">Murakami</p>
-        <div className="spinblade3D w-60 absolute top-72 -right-20  z-20">
-          <img src="/images/demon/blade.png" alt="" />
+        <div className="flex flex-col items-center ">
+          <div className=" text-[200px] content_genesis ">
+            <p className="trans alien_font leading-none mt-2">Genesis</p>
+            <p className="trans2 alien_font leading-none -mt-24">Genesis</p>
+            <p className="z-0 leading-none alien_font -mt-20 ">Genesis</p>
+          </div>
         </div>
-        <div className="spinicon3D w-60 absolute left-[800px]  z-20">
-          <img src="/images/demon/icon.png" alt="" />
+        <div className="spinblade3D w-60 absolute top-80 z-20">
+          <img src="/images/genesis/blade.png" alt="" />
         </div>
-        <div className="w-[500px] element  z-20">
-          <img src="/images/demon/clone.png" alt="" />
+        <div className="spinicon3D w-60 absolute right-0 z-20">
+          <img src="/images/genesis/icon.png" alt="" />
         </div>
+        <div className="w-[600px] alien z-20">
+          <img src="/images/genesis/clone.png" alt="" />
+        </div>
+      </div>
+      <div className="absolute top-[550px] right-20 ">
+        <Collection />
       </div>
     </div>
   );
 };
 
 export default Genesis;
-
-{
-  /* <div class="titles slot__titles layer" data-depth="0.8" data-v-45d2f932="" data-v-3e5a9017="" style="font-size: 152px; transform: translate3d(17.3px, -11px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
-<p class="titles__ghost" data-v-45d2f932="" style="padding-top: 91.2px;">Murakami</p>
-<p class="titles__title" data-v-45d2f932="" style="transform: translate(0px, -135%);">
-<span data-v-45d2f932="" style="transform: translate(0px, 60%);">Murakami</span>
-</p>
-<p class="titles__title" data-v-45d2f932="" style="transform: translate(0px, -90%);">
-<span data-v-45d2f932="" style="transform: translate(0px, 45%);">Murakami</span>
-</p>
-<p class="titles__title" data-v-45d2f932="" style="transform: translate(0px, 0%);">
-<span data-v-45d2f932="" style="transform: translate(0px, 0%);">Murakami</span>
-</p>
-</div> */
-}
