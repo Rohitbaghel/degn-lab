@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Collection from "./Collection";
 
-const Human = () => {
+const Angel = () => {
   const [translateX, setTranslateX] = useState(0);
   const [translateY, setTranslateY] = useState(0);
 
@@ -30,7 +30,7 @@ const Human = () => {
                 transform: `translate(-${translateX}px, ${translateY}px)`,
               }}
             >
-              Human
+              Angel
             </p>
             <p
               className="trans2 human_font  leading-none -mt-20"
@@ -38,7 +38,7 @@ const Human = () => {
                 transform: `translate(-${translateX}px, ${translateY}px)`,
               }}
             >
-              Human
+              Angel
             </p>
             <p
               className="human_text z-0 leading-none -mt-16 "
@@ -46,18 +46,18 @@ const Human = () => {
                 transform: `translate(-${translateX}px, ${translateY}px)`,
               }}
             >
-              Human
+              Angel
             </p>
           </div>
         </div>
         <div className="spinblade3D w-60 absolute top-[350px] z-20">
-          <img src="/images/alien/blade.png" alt="" />
+          <img src="/images/angel/blade.png" alt="" />
         </div>
         <div className="spinicon3D w-60 absolute left-[700px] top-10  z-20">
-          <img src="/images/alien/icon.png" alt="" />
+          <img src="/images/angel/icon.png" alt="" />
         </div>
         <div className="w-[600px] alien   z-20">
-          <img src="/images/alien/clone.png" alt="" />
+          <img src="/images/angel/clone.png" alt="" />
         </div>
       </div>
       <div className="absolute top-[550px] right-20 ">
@@ -67,4 +67,4 @@ const Human = () => {
   );
 };
 
-export default Human;
+export default Angel;

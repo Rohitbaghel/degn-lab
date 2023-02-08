@@ -1,8 +1,9 @@
 import React from "react";
 import Genesis from "./Genesis";
 import Alien from "./Human";
+import Angel from "./Angel";
 
-const colors = [<Genesis />, <Alien />];
+const colors = [<Genesis />, <Alien />,<Angel/>];
 const delay = 2500;
 
 export function Slideshow() {
