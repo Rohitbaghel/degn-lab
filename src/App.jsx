@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar";
 import Human from "./components/Human";
 import Collection from "./components/Collection";
 import Angel from "./components/Angel";
-import Box from "./components/Box";
+import AnimatedBox from "./components/ViewBox";
+
 
 
 export default function App() {
@@ -14,12 +15,13 @@ export default function App() {
       <div className="space stars2"></div>
       <div className="space stars3"></div>
       <Navbar />
-      {/* <Slideshow/>  */}
-      <Genesis/>
+      <Slideshow/> 
+      {/* <Genesis/> */}
       {/* <Human/> */}
       {/* <Angel/>  */}
 {/* <Collection/> */}
-{/* <Box/> */}
+
+
 
     </div>
   );
