@@ -119,31 +119,22 @@ code {
 
 .slideshowDots {
   text-align: center;
-
 }
 
 .slideshowDot {
-  display: inline-block; 
+  display: inline-block;
   height: 20px;
   width: 20px;
   border-radius: 50%;
 
   cursor: pointer;
   margin: 15px 7px 0px;
-  
 
   background-color: black;
 }
 
 .slideshowDot.active {
   background-color: white;
-}
-
-.alien_back {
-  transform: translate3d(0px, 0px, 0px) rotate(0.0001deg);
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  /* border: 1px solid ; */
 }
 
 .layer {
@@ -249,8 +240,18 @@ code {
   left: 50%;
   transform: translate(-50%, -100%);
   opacity: 0;
-  animation: appear-div 1.5s forwards;
+  animation: appear-div 2s forwards;
 }
+
+.alien-diappear {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  animation: disappear-div 2s forwards;
+}
+
 @keyframes appear-div {
   0% {
     opacity: 0;
@@ -259,6 +260,17 @@ code {
   100% {
     opacity: 1;
     transform: translate(-50%, 0);
+  }
+}
+
+@keyframes disappear-div {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -100%);
   }
 }
 
@@ -272,14 +284,35 @@ code {
   animation: down-div 1s forwards;
 }
 
+.content_human_hide {
+  position: absolute;
+  bottom: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  opacity: 0;
+  animation: hide-div 1s forwards;
+}
+
+@keyframes hide-div {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  }
+}
+
 .content_genesis {
   position: absolute;
   bottom: 0;
   top: 50%;
   left: 50%;
-  /* transform: translate(-50%, 100%); */
+  transform: translate(-50%, 100%);
   opacity: 0;
-  animation: genesis-down-div 1s forwards ;
+  animation: genesis-down-div 5s ease-in-out infinite alternate;
 }
 
 @keyframes down-div {
@@ -320,7 +353,6 @@ code {
   height: 16px;
 }
 
-
 .unu,
 .doi,
 .trei {
@@ -345,8 +377,6 @@ code {
 
   animation-delay: 0.2s;
   animation-direction: alternate;
-
-
 }
 
 .trei {
@@ -356,7 +386,6 @@ code {
 
   animation-delay: 0.3s;
   animation-direction: alternate;
-
 }
 
 @-o-keyframes mouse-scroll {
@@ -381,3 +410,26 @@ code {
     opacity: 1;
   }
 }
+
+/*  */
+
+.blade_appear {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(100%, -50%);
+  opacity: 0;
+  animation: blade-appear 1s forwards;
+}
+
+@keyframes blade-appear {
+  0% {
+    opacity: 0;
+    transform: translate(100%, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}
+/*  */

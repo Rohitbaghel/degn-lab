@@ -16,14 +16,43 @@ const Human = () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsAnimating(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [isAnimating]);
+
+  useEffect(() => {
+    if (isAnimating) {
+      const timer = setTimeout(() => {
+        setIsAnimating(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [isAnimating]);
+
+  console.log(isAnimating);
+
   return (
     <div className="alien_back mx-40 px-20  my-4  text-white relative uppercase ">
       <div className="relative py-28">
-        <p className="text-white  text-lg whitespace-nowrap absolute  top-24 human_text ">
+        <p
+          className={`text-white  text-lg whitespace-nowrap absolute  top-24 human_text ${
+            isAnimating ? "opacity-0" : "opacity-100"
+          } `}
+        >
           Mint on 31/08/2022
         </p>
         <div className="flex flex-col items-center">
-          <div className=" text-[200px] content_human ">
+          <div
+            className={`text-[200px] ${
+              isAnimating ? "content_human_hide" : "content_human"
+            }  `}
+          >
             <p
               className="trans human_font leading-none"
               style={{
@@ -50,17 +79,33 @@ const Human = () => {
             </p>
           </div>
         </div>
-        <div className="spinblade3D w-60 absolute top-[350px] z-20">
+        <div
+          className={`spinblade3D w-60 absolute top-[350px] z-20 ${
+            isAnimating ? "opacity-0" : "opacity-100"
+          }`}
+        >
           <img src="/images/alien/blade.png" alt="" />
         </div>
-        <div className="spinicon3D w-60 absolute left-[700px] top-10  z-20">
+        <div
+          className={`spinicon3D w-60 absolute left-[700px] top-10  z-20 ${
+            isAnimating ? "opacity-0" : "opacity-100"
+          } `}
+        >
           <img src="/images/alien/icon.png" alt="" />
         </div>
-        <div className="w-[600px] alien   z-20">
+        <div
+          className={`w-[600px] ${
+            isAnimating ? "alien-diappear" : "alien"
+          }   z-20`}
+        >
           <img src="/images/alien/clone.png" alt="" />
         </div>
       </div>
-      <div className="absolute top-[550px] right-20 ">
+      <div
+        className={`absolute top-[550px] right-20 ${
+          isAnimating ? "opacity-0" : "opacity-100"
+        }`}
+      >
         <Collection />
       </div>
     </div>

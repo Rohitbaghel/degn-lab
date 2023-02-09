@@ -1,9 +1,10 @@
 import Genesis from "./components/Genesis";
-import { Slideshow } from "./components/AutoSlider";
+
 import Navbar from "./components/Navbar";
 import Human from "./components/Human";
 import Collection from "./components/Collection";
 import Angel from "./components/Angel";
+
 
 
 
@@ -14,14 +15,11 @@ export default function App() {
       <div className="space stars2"></div>
       <div className="space stars3"></div>
       <Navbar />
-      <Slideshow/> 
+
       {/* <Genesis/> */}
-      {/* <Human/> */}
+      <Human/>
       {/* <Angel/>  */}
-{/* <Collection/> */}
-
-
-
+      {/* <Collection/> */}
     </div>
   );
 }

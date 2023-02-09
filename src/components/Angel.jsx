@@ -1,6 +1,28 @@
 import React, { useEffect, useState } from "react";
 import Collection from "./Collection";
 
+
+let data = [
+  {
+    name: "Angel",
+    blade: "/images/angel/blade.png",
+    icon: "/images/angel/icon.png",
+    clone: "/images/angel/clone.png",
+  },
+  {
+    name: "Human",
+    blade: "/images/human/blade.png",
+    icon: "/images/human/icon.png",
+    clone: "/images/human/clone.png",
+  },
+  {
+    name: "genesis",
+    blade: "/images/genesis/blade.png",
+    icon: "/images/genesis/icon.png",
+    clone: "/images/genesis/clone.png",
+  },
+];
+
 const Angel = () => {
   const [translateX, setTranslateX] = useState(0);
   const [translateY, setTranslateY] = useState(0);
@@ -18,6 +40,7 @@ const Angel = () => {
   }, []);
   return (
     <div className="alien_back mx-40 px-20  my-4  text-white relative uppercase ">
+      
       <div className="relative py-28">
         <p className="text-white  text-lg whitespace-nowrap absolute  top-24 human_text ">
           Mint on 31/08/2022
