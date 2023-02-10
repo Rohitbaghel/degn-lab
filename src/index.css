@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: alien;
   src: url(./fonts/ttalientzvar.ttf);
@@ -11,24 +15,27 @@
   font-weight: 700;
 }
 
+body {
+  height: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at bottom, navy 0, black 100%);
+
+}
+
 .human_text {
   font-family: human;
 }
 
-body {
-  background: radial-gradient(circle at bottom, navy 0, black 100%);
-  height: 100vh;
-  overflow: hidden;
+.main_container {
+  height: 100%;
+  min-height: 100vh;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 .space {
   background: rgba(128, 0, 128, 0.1) center / 200px 200px round;
@@ -432,4 +439,67 @@ code {
     transform: translate(0, -50%);
   }
 }
+/*  */
+
+.spinner {
+  position: absolute;
+  width: calc(2048px / 11);
+  height: calc(1880px / 9);
+  /* top: 50%; */
+  right: 0%;
+  transform: translate(-50%, -50%);
+  animation: playX 2s steps(7) infinite, playY 3s steps(8) infinite;
+}
+
+.spinne_blade {
+  position: absolute;
+  width: calc(2048px / 7);
+  height: 312px;
+  background-position: center;
+  background-size: 312px 312px;
+  right: 0;
+  animation: spin 1s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes playX {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -2048px;
+  }
+}
+@keyframes playY {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -1880px;
+  }
+}
+
+/*  */
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s ease-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 1s ease-out;
+}
+
 /*  */

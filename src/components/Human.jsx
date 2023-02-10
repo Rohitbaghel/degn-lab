@@ -36,22 +36,40 @@ const {name,icon,blade,clone} = data
     }
   }, [isAnimating]);
 
-  // const [scrollState, setScrollState] = useState(true);
-  // const containerRef = useRef(null);
+  
+//  scroll feature
+ const [scrollDirection, setScrollDirection] = useState("none");
+  const previousScrollPos = useRef(0);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
-  //     if (scrollTop === 0) {
-  //       setScrollState(false);
-  //     }
-  //     if (scrollTop + clientHeight === scrollHeight) {
-  //       setScrollState(false);
-  //     }
-  //   };
-  //   containerRef.current.addEventListener("scroll", handleScroll);
-  // }, [scrollState]);
- 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      if (currentScrollPos > previousScrollPos.current) {
+        setScrollDirection("down");
+      } else if (currentScrollPos < previousScrollPos.current) {
+        setScrollDirection("up");
+      }
+      previousScrollPos.current = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollDirection]);
+
+  useEffect(() => {
+    if (scrollDirection !== "none") {
+      const timer = setTimeout(() => {
+        setScrollDirection("none");
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [scrollDirection]);
+
+
+// scroll feature
 
   return (
     <div className="alien_back mx-40 px-20  my-4  text-white relative uppercase ">

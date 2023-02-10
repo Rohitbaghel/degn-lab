@@ -5,15 +5,18 @@ import Human from "./components/Human";
 import Collection from "./components/Collection";
 import Angel from "./components/Angel";
 import { useEffect, useRef, useState } from "react";
+import { SpriteAnimator } from "./components/SpriteAnimator";
+import AnimatedList from "./components/AnimatedList";
+import MyComponent from "./components/ScrollExample";
 
 export default function App() {
   const UIdata = [
     {
-    name: "Angel",
-    blade: "/images/angel/blade.png",
-    icon: "/images/angel/icon.png",
-    clone: "/images/angel/clone.png",
-  },
+      name: "Angel",
+      blade: "/images/angel/blade.png",
+      icon: "/images/angel/icon.png",
+      clone: "/images/angel/clone.png",
+    },
     {
       name: "Human",
       blade: "/images/alien/blade.png",
@@ -46,16 +49,23 @@ export default function App() {
   console.log(increment, data);
 
   return (
-    <div>
+    <div className="main_container">
       <div className="space stars1"></div>
       <div className="space stars2"></div>
       <div className="space stars3"></div>
       <Navbar />
 
-      {/* <Genesis/> */}
-      <Human data={data} />
-      {/* <Angel/>  */}
+      <Genesis/>
+      {/* <Human data={data} /> */}
+      {/* <Angel /> */}
       {/* <Collection/> */}
+      {/* <SpriteAnimator
+        frameCount={1}
+        frameHeight={"100vh"}
+        frameWidth={"100wh"}
+        spriteSheet={"/images/angel/blade_sprite.png"}
+      /> */}
+{/* <MyComponent/> */}
     </div>
   );
 }
