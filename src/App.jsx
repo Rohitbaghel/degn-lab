@@ -5,9 +5,9 @@ import Human from "./components/Human";
 import Collection from "./components/Collection";
 import Angel from "./components/Angel";
 import { useEffect, useRef, useState } from "react";
-import { SpriteAnimator } from "./components/SpriteAnimator";
-import AnimatedList from "./components/AnimatedList";
-import MyComponent from "./components/ScrollExample";
+
+
+
 
 export default function App() {
   const UIdata = [
